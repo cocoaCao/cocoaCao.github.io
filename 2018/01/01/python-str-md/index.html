@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>字符串 | 书山有路勤为径，学海无涯苦作舟</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Python," />
+  
+
+  <meta name="description" content="声明 b = “Hello cocoacao” 或 b = ‘hello cocoaco’
+输出name = &amp;quot;cocoacao&amp;quot;position = &amp;quot;帝都&amp;quot;address = &amp;quot;海淀区中关村&amp;quot;print(&amp;quot;name：%s&amp;quot;%name)print(&amp;quot;position： %s&amp;quot;%position)p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符串">
+<meta property="og:url" content="http://yoursite.com/2018/01/01/python-str-md/index.html">
+<meta property="og:site_name" content="书山有路勤为径，学海无涯苦作舟">
+<meta property="og:description" content="声明 b = “Hello cocoacao” 或 b = ‘hello cocoaco’
+输出name = &amp;quot;cocoacao&amp;quot;position = &amp;quot;帝都&amp;quot;address = &amp;quot;海淀区中关村&amp;quot;print(&amp;quot;name：%s&amp;quot;%name)print(&amp;quot;position： %s&amp;quot;%position)p">
+<meta property="og:updated_time" content="2018-01-02T15:00:46.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="字符串">
+<meta name="twitter:description" content="声明 b = “Hello cocoacao” 或 b = ‘hello cocoaco’
+输出name = &amp;quot;cocoacao&amp;quot;position = &amp;quot;帝都&amp;quot;address = &amp;quot;海淀区中关村&amp;quot;print(&amp;quot;name：%s&amp;quot;%name)print(&amp;quot;position： %s&amp;quot;%position)p">
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5ca5a7c23202710add88952243b9f195";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">Home</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">Home</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#声明"><span class="toc-text">声明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输出"><span class="toc-text">输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输入"><span class="toc-text">输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下标和切片"><span class="toc-text">下标和切片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串常见的操作"><span class="toc-text">字符串常见的操作</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-python-str-md" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">字符串</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.01.01</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Cao</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Python-学习之旅/">Python 学习之旅</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+        <i class="icon-comment"></i> 
+        <span class="ds-thread-count" data-thread-key="post-python-str-md"><i class="fa fa-spinner fa-spin"></i></span> 条评论
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h4 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h4><p><code> b = “Hello cocoacao” </code><br>或<br><code> b = ‘hello cocoaco’</code></p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">name = &quot;cocoacao&quot;</div><div class="line">position = &quot;帝都&quot;</div><div class="line">address = &quot;海淀区中关村&quot;</div><div class="line"></div><div class="line">print(&quot;name：%s&quot;%name)</div><div class="line">print(&quot;position： %s&quot;%position)</div><div class="line">print(&quot;address: %s&quot;%address)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">name: cocoacao</div><div class="line">position: 帝都</div><div class="line">address: 海淀区中关村</div></pre></td></tr></table></figure>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">name = input(&quot;请输入用户名：&quot;)</div></pre></td></tr></table></figure>
+<h4 id="下标和切片"><a href="#下标和切片" class="headerlink" title="下标和切片"></a>下标和切片</h4><p>下标<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">name = &quot;cocoacao&quot;</div><div class="line">print(&quot;name[0] = &quot; + name[0])</div><div class="line">print(&quot;name[3] = &quot; + name[3])</div><div class="line">print(&quot;name[7] = &quot; + name[7])</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">name[0] = c</div><div class="line">name[3] = o</div><div class="line">name[7] = o</div></pre></td></tr></table></figure>
+<p>倒序<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">name = &quot;cocoacao&quot;</div><div class="line">print(&quot;name[-1] = &quot; + name[-1])</div><div class="line">print(&quot;name[-5] = &quot; + name[-5])</div><div class="line">print(&quot;name[-8] = &quot; + name[-8])</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">name[-1] = o</div><div class="line">name[-5] = o</div><div class="line">name[-8] = c</div></pre></td></tr></table></figure>
+<p>切片<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">string[起始位置:结束:步长]</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">name = &quot;cocoacao&quot;</div><div class="line">print(name[0:3]) #取下标0~2的字符</div><div class="line">print(name[3:3]) #取下标3、4、5的字符</div><div class="line">print(name[2:]) #取下标从2开始到最后的字符</div><div class="line">print(name[1:-1]) #取下标从2开始到倒数第2个字符</div><div class="line">print(name[:3]) #取下标0~2的字符</div><div class="line">print(name[::2]) #取下标0、2、4、6的字符</div><div class="line">print(name[1:5:2]) #取下标1、3的字符</div><div class="line">print(name[::-2]) #取下标7、5、3、1的字符</div><div class="line">print(name[5:1:-2]) #取下标5，3的字符</div><div class="line">print(name[::-1]) #字符串倒序</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">coc</div><div class="line">oac</div><div class="line">coacao</div><div class="line">ocoaca</div><div class="line">coc</div><div class="line">ccaa</div><div class="line">oo</div><div class="line">ocoo</div><div class="line">co</div><div class="line">oacaococ</div></pre></td></tr></table></figure>
+<h4 id="字符串常见的操作"><a href="#字符串常见的操作" class="headerlink" title="字符串常见的操作"></a>字符串常见的操作</h4><ol>
+<li><p>find<br> mystr.find(str, start=0, end=len(mystr))<br> 检测str中是否包含mystr，如果包含，返回开始的索引值，否则返回-1</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">name = &quot;cocoacao&quot;</div><div class="line">print(name.find(&quot;oco&quot;))</div><div class="line">print(name.find(&quot;oco&quot;,2,(len(name)-2)))</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">1</div><div class="line">-1</div></pre></td></tr></table></figure>
+</li>
+<li><p>index<br> mystr.index(str, start=0, end=len(mystr))<br> 同find方法，只是与str不在mystr会报异常</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">name = &quot;cocoacao&quot;</div><div class="line">print(name.index(&quot;oco&quot;))</div><div class="line">print(name.index(&quot;oco&quot;,2,(len(name)-2)))</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">1</div><div class="line">Traceback (most recent call last):</div><div class="line">File &quot;/Users/macairwkcao/Code/Python/test.py&quot;, line 8, in &lt;module&gt;</div><div class="line">print(name.index(&quot;oco&quot;,2,(len(name)-2)))</div><div class="line">ValueError: substring not found</div></pre></td></tr></table></figure>
+</li>
+<li><p>count<br> mystr.count(str, start=0, end=len(mystr))<br> 返回str在start和end</p>
+</li>
+<li>replace</li>
+<li>split</li>
+<li>capitalize</li>
+<li>title</li>
+<li>startswith</li>
+<li>endswith</li>
+<li>lower</li>
+<li>upper</li>
+<li>ljust</li>
+<li>rjust</li>
+<li>center</li>
+<li>lstrip</li>
+<li>rstrip</li>
+<li>strip</li>
+<li>rfind</li>
+<li>rindex</li>
+<li>partition</li>
+<li>rpartition</li>
+<li>splitlines</li>
+<li>isalpha</li>
+<li>isdigit</li>
+<li>isalnum</li>
+<li>isspace</li>
+<li>join</li>
+</ol>
+
+    
+  </div>
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持cocoacao</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/03/09/Markdown教程/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+  <section class="duoshuo-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-python-str-md" 
+      data-title="字符串" data-url="http://yoursite.com/2018/01/01/python-str-md/index.html"></div>
+    <!-- 多说评论框 end -->
+  </section>
+
+
+
+
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"CocoaCao"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
